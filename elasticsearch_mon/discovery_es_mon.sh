@@ -29,9 +29,9 @@ set -e
 
 declare -r FILE_DIR="./es_mon.conf"
 function discovery_es_key(){	
-	item=$1
-    	eskeyarray=(`cat $FILE_DIR|grep $item`)
-    	arraynum=${#eskeyarray[@]}
+	local item=$1
+    	local eskeyarray=(`cat $FILE_DIR|grep $item`)
+    	local arraynum=${#eskeyarray[@]}
 
     	printf "{\n    \"data\":[\n"
     	for ((i=0;i<${arraynum};i++))
